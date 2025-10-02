@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
+import "./App.css";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -42,7 +42,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider
       router={router}
-      fallbackElement={<div className="flex justify-center items-center h-screen">Loading...</div>}
+      fallbackElement={<div>Loading...</div>}
     />
   </StrictMode>,
 )

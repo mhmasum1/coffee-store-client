@@ -6,7 +6,6 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
     const { _id, name, price, quantity, photo } = coffee;
 
     const handleDelete = (_id) => {
-        console.log(_id);
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -16,7 +15,6 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
-            console.log(result.isConfirmed)
             if (result.isConfirmed) {
                 fetch(`http://localhost:3000/coffees/${_id}`, {
                     method: 'DELETE'
@@ -35,33 +33,31 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
                     })
             }
         });
-    }
+    };
 
     return (
-        <div className="card card-side bg-base-100 shadow-sm border-2">
-            <figure className="w-24 h-24">
-                <img
-                    src={photo}
-                    alt={name}
-                    className="w-full h-full object-cover" />
-            </figure>
-            <div className="flex mt-8 w-full justify-around">
-                <div>
-                    <h2 className="font-bold text-xl">{name}</h2>
-                    <p>Price: {price}</p>
-                    <p>Quantity: {quantity}</p>
-                </div>
-                <div className="card-actions justify-end">
-                    <div className="join join-vertical space-y-2">
-                        <Link to={`/coffee/${_id}`}>
-                            <button className="btn join-item">View</button>
-                        </Link>
-                        <Link to={`/updateCoffee/${_id}`}>
-                            <button className="btn join-item">Edit</button>
-                        </Link>
-                        <button onClick={() => handleDelete(_id)} className="btn join-item">X</button>
-                    </div>
-                </div>
+        <div className="bg-pink-100 bg-stripes p-6 rounded-xl flex items-center justify-between shadow-md border border-pink-200">
+            <div className="w-32 h-32 mr-6">
+                <img src={photo} alt={name} className="w-full h-full object-contain drop-shadow-lg" />
+            </div>
+            <div className="flex-1 space-y-1">
+                <h2 className="text-2xl font-semibold text-gray-800">{name}</h2>
+                <p><span className="font-semibold">Price:</span> ${price}</p>
+                <p><span className="font-semibold">Quantity:</span> {quantity}</p>
+            </div>
+            <div className="space-y-2 flex flex-col ml-4">
+                <Link to={`/coffee/${_id}`}>
+                    <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 rounded-md text-sm">View</button>
+                </Link>
+                <Link to={`/updateCoffee/${_id}`}>
+                    <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-1 rounded-md text-sm">Edit</button>
+                </Link>
+                <button
+                    onClick={() => handleDelete(_id)}
+                    className="bg-red-500 hover:bg-red-600 text-white px-4 py-1 rounded-md text-sm"
+                >
+                    Delete
+                </button>
             </div>
         </div>
     );
