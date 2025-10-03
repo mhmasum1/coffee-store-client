@@ -27,21 +27,21 @@ const router = createBrowserRouter([
             return response.json();
           } catch (error) {
             console.error('Error loading coffees:', error);
-            return []; // Empty array if error
+            return [];
           }
         },
         Component: Home
       },
       {
-        path: 'addCoffee',
+        path: '/addCoffee',  // ✅ slash add করুন
         Component: AddCoffee
       },
       {
-        path: 'coffee/:id',
+        path: '/coffee/:id',  // ✅ slash add করুন
         Component: CoffeeDetails
       },
       {
-        path: 'updateCoffee/:id',
+        path: '/updateCoffee/:id',  // ✅ slash add করুন
         loader: async ({ params }) => {
           try {
             const response = await fetch(`https://coffee-store-server-theta-indol.vercel.app/coffees/${params.id}`);
