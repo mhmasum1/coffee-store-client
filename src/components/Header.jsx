@@ -1,42 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router';
-
+import React from "react";
+import { Link } from "react-router-dom";
 const Header = () => {
     return (
-        <div style={{
-            background: 'oklch(28.6% 0.066 53.813)',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-            padding: '1rem 0'
-        }}>
-            <div style={{
-                maxWidth: '1280px',
-                margin: '0 auto',
-                padding: '0 1.5rem',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center'
-            }}>
-                <Link to="/" style={{ textDecoration: 'none' }}>
-                    <h1 style={{
-                        fontSize: '1.875rem',
-                        fontWeight: 'bold',
-                        color: 'white',
-                        text: "white",
-                    }}>
+        <div className="bg-[oklch(28.6%_0.066_53.813)] shadow-md py-4">
+            <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+                {/* Logo */}
+                <Link to="/" className="no-underline">
+                    <h1 className="text-3xl font-bold text-white">
                         ☕ Cup & Comfort
                     </h1>
                 </Link>
+
+                {/* Add Coffee Button */}
                 <Link to="/addCoffee">
-                    <button style={{
-                        backgroundColor: 'white',
-                        fontWeight: 'bold',
-                        color: 'black',
-                        padding: '0.5rem 1.5rem',
-                        border: 'none',
-                        borderRadius: '0.5rem',
-                        cursor: 'pointer',
-                        fontSize: '1rem'
-                    }}>
+                    <button className="bg-white font-bold text-black px-6 py-2 rounded-lg cursor-pointer text-base hover:bg-gray-100 transition">
                         Add Coffee
                     </button>
                 </Link>
