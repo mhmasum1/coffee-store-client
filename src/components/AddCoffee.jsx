@@ -27,7 +27,7 @@ const AddCoffee = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-amber-100 to-yellow-50 px-4">
+        <div className="min-h-screen flex items-center justify-center bg-[#DBC1AC] px-4">
             <div className="max-w-4xl w-full bg-white shadow-xl rounded-2xl p-10">
 
                 <div className="text-center mb-10">
@@ -59,13 +59,13 @@ const AddCoffee = () => {
 
                         <div>
                             <label className="block font-medium text-gray-700 mb-2">
-                                Quantity
+                                Chef
                             </label>
                             <input
                                 type="text"
-                                name="quantity"
+                                name="Chef"
                                 className="input input-bordered w-full rounded-xl"
-                                placeholder="Enter quantity"
+                                placeholder="Enter coffee Chef"
                                 required
                             />
                         </div>
@@ -125,7 +125,7 @@ const AddCoffee = () => {
 
                     <div>
                         <label className="block font-medium text-gray-700 mb-2">
-                            Photo URL
+                            Photo
                         </label>
                         <input
                             type="text"

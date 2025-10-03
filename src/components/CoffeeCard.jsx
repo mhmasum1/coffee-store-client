@@ -36,7 +36,7 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
     };
 
     return (
-        <div className="bg-pink-100 bg-stripes p-6 rounded-xl flex items-center justify-between shadow-md border border-pink-200">
+        <div className="bg-gray-100 bg-stripes p-6 rounded-xl flex items-center justify-between shadow-md border-none">
             <div className="w-32 h-32 mr-6">
                 <img src={photo} alt={name} className="w-full h-full object-contain drop-shadow-lg" />
             </div>
@@ -47,7 +47,7 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
             </div>
             <div className="space-y-2 flex flex-col ml-4">
                 <Link to={`/coffee/${_id}`}>
-                    <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 rounded-md text-sm">View</button>
+                    <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-1 rounded-md text-sm">View</button>
                 </Link>
                 <Link to={`/updateCoffee/${_id}`}>
                     <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-1 rounded-md text-sm">Edit</button>

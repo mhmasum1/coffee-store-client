@@ -24,7 +24,7 @@ const Hero = () => {
                     It's coffee time - Sip & Savor - Relaxation in every sip! Get the nostalgia back!! Your companion of every moment!!! Enjoy the beautiful moments and make them memorable.
                 </p>
 
-                <button className="btn bg-[#E3B577] hover:bg-[#d0a76f] text-black border-none px-8 py-3 text-lg">
+                <button className="btn bg-[white] hover:bg-[#d0a76f] text-black border-none px-8 py-3 text-lg">
                     Learn More
                 </button>
             </div>

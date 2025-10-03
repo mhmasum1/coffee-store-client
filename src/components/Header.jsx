@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 const Header = () => {
     return (
         <div style={{
-            background: 'linear-gradient(to right, #FEF3C7, #FED7AA)',
+            background: 'oklch(28.6% 0.066 53.813)',
             boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
             padding: '1rem 0'
         }}>
@@ -20,15 +20,17 @@ const Header = () => {
                     <h1 style={{
                         fontSize: '1.875rem',
                         fontWeight: 'bold',
-                        color: '#78350f'
+                        color: 'white',
+                        text: "white",
                     }}>
                         ☕ Cup & Comfort
                     </h1>
                 </Link>
                 <Link to="/addCoffee">
                     <button style={{
-                        backgroundColor: '#d97706',
-                        color: 'white',
+                        backgroundColor: 'white',
+                        fontWeight: 'bold',
+                        color: 'black',
                         padding: '0.5rem 1.5rem',
                         border: 'none',
                         borderRadius: '0.5rem',

@@ -16,7 +16,7 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="bg-[#FEF3C7] py-16 px-4 sm:px-6 lg:px-8">
+        <footer className="bg-[#D3D3D3] py-16 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
 
@@ -86,7 +86,7 @@ const Footer = () => {
                                 <input
                                     type="text"
                                     placeholder="Name"
-                                    className="w-full px-6 py-4 bg-white border border-amber-200 rounded-2xl text-black placeholder-black "
+                                    className="w-full px-6 py-4 bg-white border-none rounded-2xl text-black placeholder-black "
                                 />
                             </div>
 
@@ -94,7 +94,7 @@ const Footer = () => {
                                 <input
                                     type="email"
                                     placeholder="Email"
-                                    className="w-full px-6 py-4 bg-white border border-amber-200 rounded-2xl text-black placeholder-black"
+                                    className="w-full px-6 py-4 bg-white border-none rounded-2xl text-black placeholder-black"
                                 />
                             </div>
 
@@ -102,23 +102,23 @@ const Footer = () => {
                                 <textarea
                                     placeholder="Message"
                                     rows={5}
-                                    className="w-full px-6 py-4 bg-white border border-amber-200 rounded-2xl text-black placeholder-black"
+                                    className="w-full px-6 py-4 bg-white border-none rounded-2xl text-black placeholder-black"
                                 />
                             </div>
 
                             <div className="flex justify-center lg:justify-start">
-                                <button className="group relative px-8 py-4 bg-amber-900 text-white rounded-full font-serif text-lg font-semibold hover:bg-amber-950 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-3 cursor-pointer">
+                                <button className="group relative px-8 py-4 bg-amber-900 text-white rounded-full font-serif text-lg font-semibold  transform shadow-lg  flex items-center gap-3 ">
                                     <span>Send Message</span>
-                                    <Send size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
+                                    <Send size={20} />
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="mt-16 pt-8 border-t-2 border-rose-200">
+                <div className="mt-8 pt-8 ">
                     <p className="text-center text-amber-800 text-sm md:text-base">
-                        © 2025 Espresso Emporium. All rights reserved. Made with ☕ and ❤️
+                        © 2025 Espresso Emporium. All rights reserved.
                     </p>
                 </div>
             </div>
