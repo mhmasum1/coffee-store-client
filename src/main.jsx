@@ -18,7 +18,18 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        loader: () => fetch('chttps://coffee-store-server-theta-indol.vercel.app/coffees'),
+        loader: async () => {
+          try {
+            const response = await fetch('https://coffee-store-server-theta-indol.vercel.app/coffees');
+            if (!response.ok) {
+              throw new Error('Failed to fetch coffees');
+            }
+            return response.json();
+          } catch (error) {
+            console.error('Error loading coffees:', error);
+            return []; // Empty array if error
+          }
+        },
         Component: Home
       },
       {
@@ -31,7 +42,18 @@ const router = createBrowserRouter([
       },
       {
         path: 'updateCoffee/:id',
-        loader: ({ params }) => fetch(`chttps://coffee-store-server-theta-indol.vercel.app/coffees/${params.id}`),
+        loader: async ({ params }) => {
+          try {
+            const response = await fetch(`https://coffee-store-server-theta-indol.vercel.app/coffees/${params.id}`);
+            if (!response.ok) {
+              throw new Error('Failed to fetch coffee');
+            }
+            return response.json();
+          } catch (error) {
+            console.error('Error loading coffee:', error);
+            return null;
+          }
+        },
         Component: UpdateCoffee
       }
     ]
