@@ -99,13 +99,13 @@ const AddCoffee = () => {
 
                         <div>
                             <label className="block font-medium text-gray-700 mb-2">
-                                Price
+                                Category
                             </label>
                             <input
                                 type="text"
                                 name="price"
                                 className="input input-bordered w-full rounded-xl"
-                                placeholder="Enter price per cup"
+                                placeholder="Enter coffee category"
                             />
                         </div>
 

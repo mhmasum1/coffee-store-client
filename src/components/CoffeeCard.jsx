@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom'; // ✅ react-router-dom ব্যবহার করুন
 import Swal from 'sweetalert2';
 
 const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
-    const { _id, name, price, quantity, photo } = coffee;
+    const { _id, name, Chef, supplier, photo } = coffee;
 
     const handleDelete = (_id) => {
         Swal.fire({
@@ -36,21 +36,26 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
     };
 
     return (
-        <div className="bg-gray-100 bg-stripes p-6 rounded-xl flex items-center justify-between shadow-md border-none">
+        <div className="bg-gray-100 p-6 rounded-xl flex items-center justify-between shadow-md border">
+            {/* Photo */}
             <div className="w-32 h-32 mr-6">
-                <img src={photo} alt={name} className="w-full h-full object-contain drop-shadow-lg" />
+                <img src={photo} alt={name} className="w-full h-full object-cover rounded-lg drop-shadow-lg" />
             </div>
+
+            {/* Coffee Info */}
             <div className="flex-1 space-y-1">
                 <h2 className="text-2xl font-semibold text-gray-800">{name}</h2>
-                <p><span className="font-semibold">Price:</span> ${price}</p>
-                <p><span className="font-semibold">Quantity:</span> {quantity}</p>
+                <p><span className="font-semibold">Chef:</span> {Chef}</p>
+                <p><span className="font-semibold">Supplier:</span> {supplier}</p>
             </div>
+
+            {/* Actions */}
             <div className="space-y-2 flex flex-col ml-4">
                 <Link to={`/coffee/${_id}`}>
                     <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-1 rounded-md text-sm">View</button>
                 </Link>
                 <Link to={`/updateCoffee/${_id}`}>
-                    <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-1 rounded-md text-sm">Edit</button>
+                    <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded-md text-sm">Edit</button>
                 </Link>
                 <button
                     onClick={() => handleDelete(_id)}

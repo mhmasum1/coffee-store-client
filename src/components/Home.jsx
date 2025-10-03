@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLoaderData } from 'react-router';
 import CoffeeCard from './CoffeeCard';
 import Hero from './Hero';
+import InstagramGallery from './InstragramGallery';
 
 const Home = () => {
     const initialCoffees = useLoaderData();
@@ -19,6 +20,7 @@ const Home = () => {
                         coffee={coffee}></CoffeeCard>)
                 }
             </div>
+            <InstagramGallery></InstagramGallery>
         </div>
     );
 };

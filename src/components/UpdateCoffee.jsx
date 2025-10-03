@@ -3,7 +3,7 @@ import { useLoaderData } from 'react-router';
 import Swal from 'sweetalert2';
 
 const UpdateCoffee = () => {
-    const { _id, name, quantity, price, taste, supplier, photo, details } = useLoaderData();
+    const { _id, name, Chef, supplier, taste, price, photo, details } = useLoaderData();
 
     const handleUpdateCoffee = (e) => {
         e.preventDefault();
@@ -13,9 +13,7 @@ const UpdateCoffee = () => {
 
         fetch(`http://localhost:3000/coffees/${_id}`, {
             method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
+            headers: { 'content-type': 'application/json' },
             body: JSON.stringify(updatedCoffee)
         })
             .then(res => res.json())
@@ -35,7 +33,6 @@ const UpdateCoffee = () => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-[#DBC1AC] px-4">
             <div className="max-w-4xl w-full bg-white shadow-xl rounded-2xl p-10">
-
                 <div className="text-center mb-10">
                     <h1 className="text-5xl font-extrabold text-amber-700 mb-4">
                         Update Coffee ☕
@@ -47,10 +44,9 @@ const UpdateCoffee = () => {
 
                 <form onSubmit={handleUpdateCoffee} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
                         <div>
-                            <label className="block font-medium text-gray-700 mb-2">
-                                Coffee Name
-                            </label>
+                            <label className="block font-medium text-gray-700 mb-2">Coffee Name</label>
                             <input
                                 type="text"
                                 name="name"
@@ -62,23 +58,19 @@ const UpdateCoffee = () => {
                         </div>
 
                         <div>
-                            <label className="block font-medium text-gray-700 mb-2">
-                                Quantity
-                            </label>
+                            <label className="block font-medium text-gray-700 mb-2">Chef</label>
                             <input
                                 type="text"
-                                name="quantity"
-                                defaultValue={quantity}
+                                name="Chef"
+                                defaultValue={Chef}
                                 className="input input-bordered w-full rounded-xl"
-                                placeholder="Enter quantity"
+                                placeholder="Enter coffee Chef"
                                 required
                             />
                         </div>
 
                         <div>
-                            <label className="block font-medium text-gray-700 mb-2">
-                                Supplier
-                            </label>
+                            <label className="block font-medium text-gray-700 mb-2">Supplier</label>
                             <input
                                 type="text"
                                 name="supplier"
@@ -89,9 +81,7 @@ const UpdateCoffee = () => {
                         </div>
 
                         <div>
-                            <label className="block font-medium text-gray-700 mb-2">
-                                Taste
-                            </label>
+                            <label className="block font-medium text-gray-700 mb-2">Taste</label>
                             <input
                                 type="text"
                                 name="taste"
@@ -102,22 +92,18 @@ const UpdateCoffee = () => {
                         </div>
 
                         <div>
-                            <label className="block font-medium text-gray-700 mb-2">
-                                Price
-                            </label>
+                            <label className="block font-medium text-gray-700 mb-2">Category</label>
                             <input
                                 type="text"
                                 name="price"
                                 defaultValue={price}
                                 className="input input-bordered w-full rounded-xl"
-                                placeholder="Enter price per cup"
+                                placeholder="Enter coffee category or price"
                             />
                         </div>
 
                         <div>
-                            <label className="block font-medium text-gray-700 mb-2">
-                                Details
-                            </label>
+                            <label className="block font-medium text-gray-700 mb-2">Details</label>
                             <input
                                 type="text"
                                 name="details"
@@ -129,9 +115,7 @@ const UpdateCoffee = () => {
                     </div>
 
                     <div>
-                        <label className="block font-medium text-gray-700 mb-2">
-                            Photo
-                        </label>
+                        <label className="block font-medium text-gray-700 mb-2">Photo</label>
                         <input
                             type="text"
                             name="photo"
