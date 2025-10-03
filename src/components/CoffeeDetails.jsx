@@ -6,7 +6,7 @@ const CoffeeDetails = () => {
     const [coffee, setCoffee] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/coffees/${id}`)
+        fetch(`coffee-store-server-theta-indol.vercel.app/coffees/${id}`)
             .then(res => res.json())
             .then(data => setCoffee(data));
     }, [id]);
