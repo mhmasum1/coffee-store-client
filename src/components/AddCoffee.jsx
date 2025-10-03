@@ -8,7 +8,7 @@ const AddCoffee = () => {
         const formData = new FormData(form);
         const newCoffee = Object.fromEntries(formData.entries());
 
-        fetch('coffee-store-server-theta-indol.vercel.app/coffees', {
+        fetch('chttps://coffee-store-server-theta-indol.vercel.app/coffees', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(newCoffee),

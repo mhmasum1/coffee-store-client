@@ -11,7 +11,7 @@ const UpdateCoffee = () => {
         const formData = new FormData(form);
         const updatedCoffee = Object.fromEntries(formData.entries());
 
-        fetch(`coffee-store-server-theta-indol.vercel.app/coffees/${_id}`, {
+        fetch(`chttps://coffee-store-server-theta-indol.vercel.app/coffees/${_id}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(updatedCoffee)
